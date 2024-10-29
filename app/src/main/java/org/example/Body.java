@@ -1,3 +1,4 @@
+package org.example;
 public class Body {
     private String imageBase64;
     private int age;

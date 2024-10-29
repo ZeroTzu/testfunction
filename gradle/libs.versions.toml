@@ -5,9 +5,11 @@
 guava = "33.2.1-jre"
 junit = "4.13.2"
 oci= "3.52.0"
+google="2.11.0"
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit = { module = "junit:junit", version.ref = "junit" }
 oci-vision = {module = "com.oracle.oci.sdk:oci-java-sdk-aivision", name="oci-vision", version.ref="oci"}
 oci-core = {module = "com.oracle.oci.sdk:oci-java-sdk-core", name="oci-core", version.ref="oci"}
 oci-objectstorage = {module = "com.oracle.oci.sdk:oci-java-sdk-objectstorage", name="oci-objectstorage", version.ref="oci"}
+google-gson = {module = "com.google.code.gson:gson", name="google-gson", version.ref="google"}

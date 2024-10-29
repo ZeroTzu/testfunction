@@ -24,6 +24,7 @@ dependencies {
     implementation(libs.oci.vision)
     implementation(libs.oci.core)
     implementation(libs.oci.objectstorage)
+    implementation(libs.google.gson)
 
 }
 

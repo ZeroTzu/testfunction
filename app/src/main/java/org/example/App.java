@@ -7,7 +7,7 @@ import java.io.ByteArrayInputStream;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Arrays; 
-
+import org.example.Body;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.aivision.AIServiceVision;
@@ -32,17 +32,16 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
     }
-    public getImageFromRequest(String string){
+    public void getImageFromRequest(String string){
         /**
          * Create a default authentication provider that uses the DEFAULT
          * profile in the configuration file.
          * Refer to <see href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File>the public documentation</see> on how to prepare a configuration file.
          */
-        Body
-         JSONPObject jsonObject = JSONPObject(string,Body.class);
-
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
         final AuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(configFile);
+
+        byte[] decodedBytes = Base64.getDecoder().decode(base64String);
         ObjectStorageClient objectStorageClient = ObjectStorageClient.builder().build(provider);
         PutObjectRequest putObjectRequest = PutObjectRequest.builder()
             .namespaceName("axobsj4fmeyp")
